@@ -1,13 +1,14 @@
 <div class="">
   <div class="">
-    <label>电影名称:</label>
+    <label style="color:#ff0000;">电影名称:</label>
     <br>
     <%= @review.title%>
   </div>
   <div class="">
-    <label>电影简介:</label>
+    <label style="color:#ff0000">电影简介:</label>
     <br>
     <%= @review.description%>
+    <br>
   </div>
   <span>
     <% if current_user && current_user.is_favorites_of?(@review) %>
@@ -32,7 +33,7 @@
     <% @posts.each do |post| %>
       <tr>
         <td><%= post.comment%></td>
-        <td><%= %></td>
+        <td><%= current_user.email%></td>
         <td><%= post.created_at%></td>
       </tr>
     <% end %>
